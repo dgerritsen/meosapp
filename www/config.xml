@@ -32,7 +32,6 @@
 <plugin name="cordova-plugin-media" source="npm" spec="~2.2.0" />
 <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" />
 <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
-<plugin name="cordova-plugin-splashscreen" source="npm" spec="undefined" />
 <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
 <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
 <plugin name="undefined" version="~1.2.1" source="npm"  />
