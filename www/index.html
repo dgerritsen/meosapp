@@ -7,15 +7,21 @@
 <body>
 	Hello World!
 	<input type="button" id="MRZ">
+	<div style="border: 1px solid black; padding: 20px" id="result"></div>
 
 	<script src="cordova.js"></script>
 	<script>
 		var btn = document.getElementById("MRZ");
 		var anyline = {
 			callback: {
-				succes: function() {
-					// Succes callback
-					alert('Succes');
+				succes: function(result) {
+					var div = document.getElementById('result');
+
+					div.innerHTML = "<p>" + "<img src=\"" + result.imagePath + "\" width=\"100%\" height=\"auto\"/><br/>" +
+							"<b>Name:</b> " + result.surNames + " " + result.givenNames + "<br/>" + "<b>Type:</b> " + result.documentType +
+							" <b>Number:</b> " + result.documentNumber + " <b>Country:</b> " + result.nationalityCountryCode +
+							" [" + result.issuingCountryCode + "]" + "<br/>" + "<b>Day of Birth:</b> " + result.dayOfBirth +
+							" <b>Expiration:</b> " + result.expirationDate + "</p>" + div.innerHTML;
 				},
 				error: function() {
 					// Error callback
