@@ -34,9 +34,6 @@
 <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
 <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
 <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
-<plugin name="undefined" version="~1.2.1" source="npm"  />
-<plugin name="undefined" version="~1.2.1" source="npm"  />
-<plugin name="undefined" version="~1.2.1" source="npm"  />
 <preference name="phonegap-version" value="cli-6.1.0" />
 <preference name="android-build-tool" value="gradle" />
 <preference name="orientation" value="default" />
