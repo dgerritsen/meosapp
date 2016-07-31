@@ -1,8 +1,0 @@
-<div class="resultswrapper">
-	<div class="switchbar">
-		<div class="item" ui-sref-active="active" ui-sref="results.person">Persoon</div>
-		<div class="item" ng-show="selectedPerson" ui-sref-active="active" ui-sref="results.id">ID</div>
-		<div class="item" ng-class="{'alert': resultsMainCtrl.personAlert}" ui-sref-active="active" ui-sref="results.ib">IB <span ng-show="resultsCtrl.persons">(<span ng-bind="resultsCtrl.persons.length"></span>)</span></div>
-	</div>
-	<div ui-view="display"></div>
-</div>
