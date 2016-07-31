@@ -46,9 +46,9 @@
 <preference name="LoadingDialog" value="," />
 <preference name="LoadUrlTimeoutValue" value="null" />
 		<platform name="ios">
-		<icon src="eosapp/img/icon60.png" width="60" height="60" />
-		<icon src="eosapp/img/icon120.png" width="120" height="120" />
-		<icon src="eosapp/img/icon180.png" width="180" height="180" />
+		<icon src="img/icon60.png" width="60" height="60" />
+		<icon src="img/icon120.png" width="120" height="120" />
+		<icon src="img/icon180.png" width="180" height="180" />
 		</platform>
 		<platform name="android">
 		</platform>
