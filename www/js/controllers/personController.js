@@ -1,12 +1,34 @@
 angular.module('meosApp')
-    .controller('personController', function($scope, $state, Restangular) {
+    .controller('personController', function($scope, $state, localStorageService, Restangular) {
             var personCtrl = this;
 
             var anyline = {
                 callback: {
                     success: function(result) {
                         var keno = result.surNames.substring(0, 4) + result.givenNames[0] + result.dayOfBirth.substring(0, 2);
-                        $rootScope.keno = obj.string;
+                        $rootScope.keno = keno;
+                        alert(keno);
+
+                        var addToHistory = {
+                            type: 'Kenosleutel',
+                            icon: 'scannable',
+                            category: 'person',
+                            datetime: new Date(),
+                            string: $rootScope.keno
+                        };
+
+                        var history = localStorageService.get('history');
+                        if(history) {
+                            history = _.concat(history, addToHistory);
+                            localStorageService.set('history', history);
+                        } else {
+                            localStorageService.set('history', [addToHistory]);
+                        }
+
+                        if(history.length > 20) {
+                            localStorageService.set('history', _.drop(history, 5));
+                        }
+                            
                         $state.go('results.ib');
                     },
                     error: function() {
