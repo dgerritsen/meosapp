@@ -1,0 +1,6 @@
+<ul class="history_list">
+	<li class="{{ history.icon }}" ng-repeat="history in historyCtrl.history | orderBy: '-datetime'" ng-click="historyCtrl.search(history)">
+		<div>{{ history.datetime | date: 'dd-MM-yyyy HH:mm:ss'}}</div>
+		<div>{{ history.type}}: {{ history.string }}</div>
+	</li>
+</ul>

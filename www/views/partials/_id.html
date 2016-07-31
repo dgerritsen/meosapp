@@ -1,0 +1,143 @@
+<div class="results">
+
+	<flapout toplevel="true" title="'GBA - ' + singlePersonCtrl.person.display_name" person="singlePersonCtrl.person">
+		<dl>
+			<dt>Identiteit</dt>
+			<dd>{{ singlePersonCtrl.person.display_name }}</dd>
+
+			<dt>Geboren</dt>
+			<dd>{{ singlePersonCtrl.person.birth_date | date:'dd-MM-yyyy' }} te {{ singlePersonCtrl.person.birth_place }} ({{ singlePersonCtrl.person.birth_country}})</dd>
+
+
+			<dt>Geslacht</dt>
+			<dd>{{ singlePersonCtrl.person.gender | gender }}</dd>
+
+			<dt>Burgerservicenummer</dt>
+			<dd>{{ singlePersonCtrl.person.bsn }}</dd>
+		</dl>
+
+		<flapout title="'Verblijfplaats'" ng-repeat="address in singlePersonCtrl.person.addresses">
+			<dl>
+				<dt>Gemeente</dt>
+				<dd>{{ address.town }}</dd>
+
+				<dt>Woonplaats</dt>
+				<dd>{{ address.city }}</dd>
+
+				<dt>Postcode</dt>
+				<dd>{{ address.postal_code }}</dd>
+
+				<dt>Straat</dt>
+				<dd>{{ address.street }}</dd>
+
+				<dt>Huisnummer</dt>
+				<dd>{{ address.number }}</dd>
+
+				<dt>Land</dt>
+				<dd>{{ address.country }}</dd>
+			</dl>
+		</flapout>
+	</flapout>
+
+	<flapout ng-show="singlePersonCtrl.person.signals.length > 0" toplevel="true" title="'OPS - ' + singlePersonCtrl.person.display_name">
+		<dl>
+			<dt>Identiteit</dt>
+			<dd>{{ singlePersonCtrl.person.display_name }}</dd>
+
+			<dt>Geboren</dt>
+			<dd>{{ singlePersonCtrl.person.birth_date | date:'dd-MM-yyyy' }} te {{ singlePersonCtrl.person.birth_place }} ({{ singlePersonCtrl.person.birth_country}})</dd>
+
+			<dt>Geslacht</dt>
+			<dd>{{ singlePersonCtrl.person.gender | gender }}</dd>
+
+			<dt>Burgerservicenummer</dt>
+			<dd>{{ singlePersonCtrl.person.bsn }}</dd>
+		</dl>
+		<flapout title="'Signalering'">
+			<dl ng-repeat="signal in singlePersonCtrl.person.signals">
+				<dt>Code</dt>
+				<dd>{{ signal.code }}</dd>
+
+				<dt>Omschrijving</dt>
+				<dd>{{ signal.status }}</dd>
+
+				<dt>Begindatum</dt>
+				<dd>{{ signal.start_date | date:'dd-MM-yyyy'}}</dd>
+
+				<dt>Aanmeldende organisatie</dt>
+				<dd>{{ signal.organization }}</dd>
+
+				<dt>Aanmelding Referentie</dt>
+				<dd>{{ signal.reference }}</dd>
+			</dl>
+		</flapout>
+	</flapout>
+
+	<flapout title="'BLUESPOT - ' + singlePersonCtrl.person.display_name" ng-if="singlePersonCtrl.person.registrations.length > 0">
+		<dl>
+			<dt>Identiteit</dt>
+			<dd>{{ singlePersonCtrl.person.display_name }}</dd>
+
+			<dt>Geboren</dt>
+			<dd>{{ singlePersonCtrl.person.birth_date | date:'dd-MM-yyyy' }} te {{ singlePersonCtrl.person.birth_place }} ({{ singlePersonCtrl.person.birth_country}})</dd>
+
+			<dt>Geslacht</dt>
+			<dd>{{ singlePersonCtrl.person.gender | gender }}</dd>
+
+			<dt>Aantal zaakregistraties</dt>
+			<dd>{{ singlePersonCtrl.person.registrations.length }}</dd>
+
+			<dt>Betreft alias</dt>
+			<dd>Nee</dd>
+		</dl>
+
+		<flapout title="'Registratie overzicht'">
+			<dl class="registration" ng-repeat="registration in singlePersonCtrl.person.registrations">
+				<dt>
+					<a target="_blank" ng-href="{{ registration.form }}">Details</a>
+				</dt>
+				<dd>
+					<br/>
+					{{ registration.title }}
+				</dd>
+
+				<dt>Maatschappelijke klasse</dt>
+				<dd>{{ registration.mk }}</dd>
+
+				<dt>Rol</dt>
+				<dd>{{ registration.role }}</dd>
+
+				<dt>Soort</dt>
+				<dd>{{ registration.type }}</dd>
+
+				<dt>Kennisname</dt>
+				<dd>{{ registration.date | date:'dd-MM-yyyy' }}</dd>
+			</dl>
+		</flapout>
+	</flapout>
+
+	<flapout title="'RDW - ' + singlePersonCtrl.person.bsn" toplevel="true" ng-show="singlePersonCtrl.person.driverslicenses.length > 0">
+		<dl>
+			<dt>Identiteit</dt>
+			<dd>{{ singlePersonCtrl.person.display_name }}</dd>
+
+			<dt>Geboren</dt>
+			<dd>{{ singlePersonCtrl.person.birth_date | date:'dd-MM-yyyy' }} te {{ singlePersonCtrl.person.birth_place }} ({{ singlePersonCtrl.person.birth_country}})</dd>
+
+			<dt>Rijbewijsafgifte adres</dt>
+			<dd>{{ singlePersonCtrl.person.driverslicenses[0].address }}</dd>
+		</dl>
+		<flapout title="'Categoriën'">
+			<dl ng-repeat="driverslicense in singlePersonCtrl.person.driverslicenses">
+				<dt>Code</dt>
+				<dd>{{ driverslicense.category }}</dd>
+
+				<dt>Omschrijving</dt>
+				<dd>{{ driverslicense.category }}</dd>
+
+				<dt>Geldig tot</dt>
+				<dd>{{ driverslicense.valid_until | date:'dd-MM-yyyy' }}</dd>
+			</dl>
+		</flapout>
+	</flapout>
+</div>

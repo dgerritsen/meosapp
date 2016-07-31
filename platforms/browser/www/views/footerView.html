@@ -1,0 +1,11 @@
+<footer>
+	<ul>
+		<li class="back" ui-state="footerCtrl.prev" ng-class="{ 'active': footerCtrl.prev }">Vorige</li>
+		<li class="document">Document</li>
+		<li class="person" ng-class="{'selected': footerCtrl.personActive}" ui-sref="results.person" ng-if="footerCtrl.personActive">Persoon</li>
+		<li class="person" ng-class="{'selected': footerCtrl.personActive}" ng-if="!footerCtrl.personActive">Persoon</li>
+		<li class="vehicle" ng-class="{'selected': footerCtrl.vehicleActive}" ui-sref="resultsVehicle.vehicle" ng-if="footerCtrl.vehicleActive">Voertuig</li>
+		<li class="vehicle" ng-class="{'selected': footerCtrl.vehicleActive}" ng-if="!footerCtrl.vehicleActive">Voertuig</li>
+		<li class="duplicate">Neem over</li>
+	</ul>
+</footer>

@@ -1,0 +1,7 @@
+<div class="resultswrapper">
+	<div class="switchbar">
+		<div class="item" ui-sref-active="active" ui-sref="resultsVehicle.vehicle">Vervoermiddel</div>
+		<div class="item" ng-class="{'alert': resultsVehicleCtrl.vehicleAlert}" ui-sref-active="active" ui-sref="resultsVehicle.ib">IB <span ng-show="resultsVehicleCtrl.vehicles">(<span ng-bind="resultsVehicleCtrl.vehicles.length"></span>)</span></div>
+	</div>
+	<div ui-view="display"></div>
+</div>

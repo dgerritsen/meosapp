@@ -1,0 +1,22 @@
+<div class="form">
+	<form>
+		<input type="text" placeholder="Persoonssleutel: AAAAVVJJMMDD" ng-model="searchCtrl.keno"/>
+		OF
+		<input type="text" placeholder="Achternaam" ng-model="searchCtrl.last_name" />
+		<input type="text" placeholder="Voorletters" ng-model="searchCtrl.first_name" />
+		Geboortedatum:
+		<div class="input_date">
+			<input type="text" placeholder="DD" class="input_day"/>
+			<input type="text" placeholder="MM" class="input_month" />
+			<input type="text" placeholder="JJJJ" class="input_year" />
+		</div>
+		<input type="text" placeholder="Geboorteland"/>
+		<div class="checkbox">
+			<label for="foreign">
+				<input id="foreign" type="checkbox"/> Indicatie vreemdeling
+			</label>
+		</div>
+		<input type="reset" value="Wissen" />
+		<input type="submit" ng-disabled="searchCtrl.keno.length < 7 || !searchCtrl.keno" ng-click="searchCtrl.search()" value="Zoeken" />
+	</form>
+</div>

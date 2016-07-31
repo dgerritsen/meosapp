@@ -1,0 +1,8 @@
+	<div class="form">
+		<form>
+			<input type="text" placeholder="Kenteken" ng-model="vehicleCtrl.license"/>
+			<input type="text" value="Nederland" placeholder="Land"/>
+			<input type="reset" value="Wissen" />
+			<input type="submit" value="Zoeken" ng-disabled="vehicleCtrl.license.length < 6 || !vehicleCtrl.license" ng-click="vehicleCtrl.searchLicense()" />
+		</form>
+	</div>

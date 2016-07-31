@@ -1,0 +1,12 @@
+<div class="form" style="height: 100%; background: #ececec; padding: 10px">
+		<form ng-submit="authCtrl.submit()">
+			<strong>Inloggen</strong>
+			<input type="text" value="" placeholder="Gebruikersnaam" ng-model="authCtrl.username"/>
+			<input type="password" value="" placeholder="Wachtwoord" ng-model="authCtrl.password"/>
+			<input type="reset" value="Wissen" />
+			<input type="submit" value="Inloggen" />
+		</form>
+		<ul class="errors" ng-if="authCtrl.errors">
+			<li style="color: red; font-weight: bold;" ng-repeat="error in authCtrl.errors" ng-bind="error"></li>
+		</ul>
+	</div>

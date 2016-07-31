@@ -1,0 +1,24 @@
+<div class="info warning" ng-hide="resultsVehicleCtrl.loaded">
+	Laden...
+</div>
+<div class="info warning" ng-show="resultsVehicleCtrl.loaded">
+	Trefferinfo X en Meldingen (<span ng-bind="resultsVehicleCtrl.vehicles.length"></span>)
+</div>
+<div class="searchresults vehicles">
+	<ul>
+		<li ng-class="{'danger': vehicle.signals.length > 0}" ng-repeat="vehicle in resultsVehicleCtrl.vehicles" ng-click="resultsVehicleCtrl.select(vehicle)">
+			<div class="name" ng-bind="vehicle.display_name"></div>
+			<div class="license">Kenteken: {{ vehicle.license }}</div>
+			<div class="tng">Aansprakelijke: {{ vehicle.owner.initials }} {{ vehicle.owner.last_name }} ({{ vehicle.owner.birth_date | date:'dd-MM-yyyy'}})</div>
+			<div class="address" ng-hide="vehicle.signals.length > 0">Adres: {{ vehicle.owner.addresses[0].street }} {{ vehicle.owner.addresses[0].number }}, {{ vehicle.owner.addresses[0].postal_code }} {{ vehicle.owner.addresses[0].city }}</div>
+			<div class="signals" ng-show="vehicle.signals.length > 0">Signalering: <span ng-repeat="signal in vehicle.signals">{{ signal.code }} </span></div>
+			<div class="bottom_row">
+				<div class="dangerclasses">
+				</div>
+				<div class="register">
+					RDW
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
