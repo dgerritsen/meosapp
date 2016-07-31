@@ -46,13 +46,13 @@
 <preference name="LoadingDialog" value="," />
 <preference name="LoadUrlTimeoutValue" value="null" />
 		<platform name="ios">
-		<icon src="img/icon60.png" width="60" height="60" />
-		<icon src="img/icon120.png" width="120" height="120" />
-		<icon src="img/icon180.png" width="180" height="180" />
+		<icon src="/img/icon60.png" width="60" height="60" />
+		<icon src="/img/icon120.png" width="120" height="120" />
+		<icon src="/img/icon180.png" width="180" height="180" />
 		</platform>
 		<platform name="android">
 		</platform>
 		<platform name="winphone">
 		</platform>
-		 <icon src="icon.png" />
+		 <icon src="/img/icon60.png" width="60" height="60" />
 </widget>
