@@ -1,0 +1,81 @@
+<div class="results">
+	<div class="result_block">
+		<div class="block_head">
+			Personalia Conform
+		</div>
+		<div class="block_content">
+			<dl>
+				<dt>ID</dt>
+				<dd></dd>
+
+				<dt>Documentnummer</dt>
+				<dd></dd>
+			</dl>
+		</div>
+	</div>
+
+	<div class="result_block">
+		<div class="block_head">
+			Bron: GBA
+		</div>
+		<div class="block_content">
+			<dl>
+				<dt>Voornaam</dt>
+				<dd ng-bind="singlePersonCtrl.person.first_name"></dd>
+
+				<dt>Achternaam</dt>
+				<dd ng-bind="singlePersonCtrl.person.last_name"></dd>
+
+				<dt>Voorvoegsel</dt>
+				<dd ng-bind="singlePersonCtrl.person.prefix"></dd>
+
+				<dt>Geboortedatum</dt>
+				<dd>{{ singlePersonCtrl.person.birth_date | date:'dd-MM-yyyy' }}</dd>
+
+				<dt>Geboortegemeente</dt>
+				<dd ng-bind="singlePersonCtrl.person.birth_place"></dd>
+
+				<dt>BSN</dt>
+				<dd ng-bind="singlePersonCtrl.person.bsn"></dd>
+
+				<dt>Nationaliteit</dt>
+				<dd ng-bind="singlePersonCtrl.person.nationality"></dd>
+
+				<dt>Geslacht</dt>
+				<dd ng-bind="singlePersonCtrl.person.gender | gender"></dd>
+			</dl>
+		</div>
+	</div>
+
+	<div class="result_block">
+		<div class="block_head">
+			Adressen
+		</div>
+	</div>
+	<div class="result_block" ng-repeat="address in singlePersonCtrl.person.addresses">
+		<div class="block_head">
+			Verblijfsadres
+		</div>
+		<div class="block_content">
+			<dl>
+				<dt>Gemeente</dt>
+				<dd>{{ address.town }}</dd>
+
+				<dt>Woonplaats</dt>
+				<dd>{{ address.city }}</dd>
+
+				<dt>Postcode</dt>
+				<dd>{{ address.postal_code }}</dd>
+
+				<dt>Straat</dt>
+				<dd>{{ address.street }}</dd>
+
+				<dt>Huisnummer</dt>
+				<dd>{{ address.number }}</dd>
+
+				<dt>Land</dt>
+				<dd>{{ address.country }}</dd>
+			</dl>
+		</div>
+	</div>
+</div>

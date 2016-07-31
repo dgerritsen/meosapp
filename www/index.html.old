@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	Hello World!
+	<input type="button" id="MRZ">
+	<div style="border: 1px solid black; padding: 20px" id="result"></div>
+
+	<script src="cordova.js"></script>
+	<script>
+		var btn = document.getElementById("MRZ");
+		var anyline = {
+			callback: {
+				succes: function(result) {
+					var div = document.getElementById('result');
+
+					div.innerHTML = "<p>" + "<img src=\"" + result.imagePath + "\" width=\"100%\" height=\"auto\"/><br/>" +
+							"<b>Name:</b> " + result.surNames + " " + result.givenNames + "<br/>" + "<b>Type:</b> " + result.documentType +
+							" <b>Number:</b> " + result.documentNumber + " <b>Country:</b> " + result.nationalityCountryCode +
+							" [" + result.issuingCountryCode + "]" + "<br/>" + "<b>Day of Birth:</b> " + result.dayOfBirth +
+							" <b>Expiration:</b> " + result.expirationDate + "</p>" + div.innerHTML;
+				},
+				error: function() {
+					// Error callback
+					alert('Error');
+				}
+			},
+			options: [
+				"eyJzY29wZSI6WyJBTEwiXSwicGxhdGZvcm0iOlsiaU9TIiwiQW5kcm9pZCIsIldpbmRvd3MiXSwidmFsaWQiOiIyMDE3LTA3LTMxIiwibWFqb3JWZXJzaW9uIjoiMyIsImlzQ29tbWVyY2lhbCI6ZmFsc2UsInRvbGVyYW5jZURheXMiOjYwLCJpb3NJZGVudGlmaWVyIjpbImNvbS5tZW9zcGEuYXBwIl0sImFuZHJvaWRJZGVudGlmaWVyIjpbImNvbS5tZW9zcGEuYXBwIl0sIndpbmRvd3NJZGVudGlmaWVyIjpbImNvbS5tZW9zcGEuYXBwIl19CnkxYzRSMUVqUUxxL3ROczM4WUlTZDBPc1o3bEV2enIxTDR1ckZrem5lUHhoUTUybmVCSVUxb3hQc3dJbU9GT3hCUWtRNmhtb1RlYUxUZGpIZ3RhQUxiOXFaM1BUSmhGQ3g2bW11TXk3Z3pWYVpHSU42QW9mZVg5THVQQ3NqQnJCYkhQM3pkVElIM2REV2hqdHhsS1N2OUZVM01Ba0JMaFhMcTkxQ0VORHdFMmpsbGtLMFNBdjJ4N1cxRWJPU0pOdWpwazFyRlpSNWxBdTJKRjkwSUFOVU8yTGdzZFBWRlkvYTBaOFhsU200RXA5MFFtRTVBRnlBdU1wNDBPQkpIQjVjQVBVTGdDSmI0VENkTWlKd1A1SjY4RlBHcCtYZEEyZ05uZXpZYWtQREVGRm43QW1iaTBSRDBySWVPWFZqWUJ2S05zV2xNa3BhTWpucHJlV0xvOThOZz09",
+				{
+					"captureResolution": "1080p",
+					"cutout": {
+							"style": "rect",
+							"maxWidthPercent": "90%",
+							"maxHeightPercent": "90%",
+							"alignment": "top_half",
+							"strokeWidth": 2,
+							"cornerRadius": 4,
+							"strokeColor": "FFFFFF",
+							"outerColor": "000000",
+							"outerAlpha": 0.3
+					},
+					"flash": {
+							"mode": "manual",
+							"alignment": "bottom_right"
+					},
+					"beepOnResult": true,
+					"vibrateOnResult": true,
+					"blinkAnimationOnResult": true,
+					"cancelOnResult": true
+			}
+			]
+		};
+
+		btn.addEventListener('click', function() {
+			cordova.exec(anyline.callback.succes, anyline.callback.fail, "AnylineSDK", "MRZ", anyline.options);
+		})
+	</script>
+</body>
+</html>

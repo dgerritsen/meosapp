@@ -1,0 +1,25 @@
+<div class="info warning" ng-hide="resultsCtrl.loaded">
+	Laden...
+</div>
+<div class="info warning" ng-show="resultsCtrl.loaded">
+	Trefferinfo X en Meldingen (<span ng-bind="resultsCtrl.persons.length"></span>)
+</div>
+<div class="searchresults">
+	<ul>
+		<li ng-class="{'danger': person.signals.length > 0 || person.dangers.length > 0}" ng-repeat="person in resultsCtrl.persons" ng-click="resultsCtrl.select(person)">
+			<div class="name" ng-bind="person.display_name"></div>
+			<div class="birth">Geboren: {{ person.birth_date | date:'dd-MM-yyyy' }} te {{ person.birth_city }} ({{ person.birth_country }})</div>
+			<div class="bsn">Burgerservicenummer: {{ person.bsn }}</div>
+			<div class="bottom_row">
+				<div class="dangerclasses">
+					<div ng-repeat="danger in person.dangers">
+						<div class="class danger-{{ danger.code }}"></div>
+					</div>
+				</div>
+				<div class="register">
+					GBA<span ng-show="person.registrations.length > 0">, BLUESPOT</span><span ng-show="person.driverslicenses.length > 0">, RDW</span><span ng-repeat="signal in person.signals">, {{ signal.register }}</span>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
