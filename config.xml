@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<widget xmlns = "http://www.w3.org/ns/widgets"
+		xmlns:gap = "http://phonegap.com/ns/1.0"
+		xmlns:android = "http://schemas.android.com/apk/res/android"
+		id        = "com.meospa.app"
+		versionCode="1.0.0"
+		version   = "1.0.0">
+		<name>MEOS</name>
+		<description>MEOS Oefen applicatie voor op de academie</description>
+		<author href="meospa.nl" email="dion.gerritsen95@gmail.com">Dion Gerritsen</author>
+		<feature name="http://api.phonegap.com/1.0/camera"/>
+		<feature name="http://api.phonegap.com/1.0/geolocation"/>
+		<feature name="http://api.phonegap.com/1.0/media"/>
+		<feature name="http://api.phonegap.com/1.0/network"/>
+		<feature name="http://api.phonegap.com/1.0/notification"/>
+<plugin name="io.anyline.cordova" version="3.4.3" source="anyline"  />
+<preference name="phonegap-version" value="3.7.0" />
+<preference name="android-build-tool" value="gradle" />
+<preference name="orientation" value="default" />
+<preference name="fullscreen" value="true" />
+<preference name="target-device" value="universal" />
+<preference name="webviewbounce" value="true" />
+<preference name="prerendered-icon" value="false" />
+<preference name="stay-in-webview" value="true" />
+<preference name="ios-statusbarstyle" value="default" />
+<preference name="detect-data-types" value="true" />
+<preference name="exit-on-suspend" value="true" />
+<preference name="show-splash-screen-spinner" value="true" />
+<preference name="auto-hide-splash-screen" value="true" />
+<preference name="FadeSplashScreen " value="true" />
+<preference name="EnableViewportScale" value="false" />
+<preference name="MediaPlaybackRequiresUserAction" value="false" />
+<preference name="AllowInlineMediaPlayback" value="true" />
+<preference name="BackupWebStorage" value="none" />
+<preference name="TopActivityIndicator" value="white" />
+<preference name="KeyboardDisplayRequiresUserAction" value="true" />
+<preference name="KeyboardShrinksView " value="true" />
+<preference name="HideKeyboardFormAccessoryBar" value="true" />
+<preference name="SuppressesIncrementalRendering" value="false" />
+<preference name="windows-identity-name" value="" />
+<preference name="android-installLocation" value="auto" />
+<preference name="SplashScreenDelay" value="2000" />
+<preference name="ErrorUrl" value="null" />
+<preference name="BackgroundColor" value="0x000000" />
+<preference name="DisallowOverscroll" value="true" />
+<preference name="LoadingDialog" value="," />
+<preference name="LoadUrlTimeoutValue" value="null" />
+		<platform name="ios">
+		<icon src="eosapp/img/icon60.png" width="60" height="60" />
+		<icon src="eosapp/img/icon120.png" width="120" height="120" />
+		<icon src="eosapp/img/icon180.png" width="180" height="180" />
+		</platform>
+		<platform name="android">
+		</platform>
+		<platform name="winphone">
+		</platform>
+		 <icon src="icon.png" />
+</widget>
